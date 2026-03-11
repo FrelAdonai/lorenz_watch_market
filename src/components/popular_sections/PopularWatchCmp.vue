@@ -14,7 +14,6 @@ const arrMock = [
         price: '450,00',
         sku: '090020BB',
         tag: 'new',
-        to: '#',
     },
     {
         id: 2,
@@ -24,7 +23,6 @@ const arrMock = [
         price: '550,00',
         sku: '090020BB',
         tag: 'new',
-        to: '#',
     },
     {
         id: 3,
@@ -34,7 +32,6 @@ const arrMock = [
         price: '550,00',
         sku: '090020BB',
         tag: 'new',
-        to: '#',
     },
     {
         id: 4,
@@ -44,7 +41,6 @@ const arrMock = [
         price: '550,00',
         sku: '090020BB',
         tag: 'new',
-        to: '#',
     },
     {
         id: 5,
@@ -54,7 +50,6 @@ const arrMock = [
         price: '550,00',
         sku: '090020BB',
         tag: 'new',
-        to: '#',
     },
     {
         id: 6,
@@ -64,7 +59,6 @@ const arrMock = [
         price: '550,00',
         sku: '090020BB',
         tag: 'new',
-        to: '#',
     }
 ]
 </script>
