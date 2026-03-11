@@ -1,0 +1,59 @@
+@use "@assets/styles/common/mixins.scss" as *;
+
+.grid\:fr {
+    display: grid;
+    width: 100%;
+
+    &-1 {
+        @extend .grid\:fr;
+        grid-template-columns: repeat(1, 1fr);
+
+        &.max {
+        }
+
+        &.full {
+        }
+    }
+
+    &-2 {
+        @extend .grid\:fr;
+        grid-template-columns: repeat(2, 1fr);
+
+        &.max {
+        }
+
+        &.full {
+        }
+
+        &.cards {
+        }
+    }
+
+    &-3 {
+        @extend .grid\:fr;
+        grid-template-columns: repeat(3, 1fr);
+
+        &.max {
+        }
+
+        &.full {
+        }
+
+        &.cards {
+        }
+    }
+
+    &-4 {
+        @extend .grid\:fr;
+        grid-template-columns: repeat(4, 1fr);
+
+        &.max {
+        }
+
+        &.full {
+        }
+
+        &.cards {
+        }
+    }
+}

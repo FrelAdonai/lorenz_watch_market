@@ -1,0 +1,42 @@
+.btn-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    background: var(--white);
+    border: 1px solid var(--accent-4);
+    border-radius: 50%;
+
+    pointer-events: all;
+
+    transition: 0.3s all ease;
+
+    &:deep(.icon) {
+        width: 60%;
+        height: 60%;
+    }
+
+    &:deep(svg) {
+        fill: var(--accent-3);
+
+        transition: 0.3s all ease;
+    }
+
+    &.swiper-button-disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    @media (hover) {
+        &:hover {
+            border-color: var(--accent);
+
+            &:deep(svg) {
+                fill: var(--accent);
+            }
+        }
+    }
+}

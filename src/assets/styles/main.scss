@@ -1,0 +1,20 @@
+// Normalize CSS - сброс стилей браузера
+@forward "normalize.css/normalize.css";
+@forward "swiper/css";
+@forward "swiper/css/navigation";
+@forward "swiper/css/pagination";
+
+// Переменные и стили
+@forward "./common/variables";
+@forward "./common/normalize";
+@forward "./common/spacing";
+@forward "./common/typography";
+@forward "./common/common-selector";
+
+// общие ui
+@forward "./ui_common/icons";
+
+// layout
+@forward "./layout/flex";
+@forward "./layout/grid";
+@forward "./layout/template";

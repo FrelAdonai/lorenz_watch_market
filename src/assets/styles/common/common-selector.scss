@@ -1,0 +1,22 @@
+.max-w {
+    &-600 {
+        max-width: 600px;
+    }
+
+    &-768 {
+        max-width: 768px;
+    }
+
+    &-1024 {
+        max-width: 1024px;
+    }
+
+    &-1250 {
+        max-width: 1250px;
+    }
+}
+
+.items {
+    display: flex;
+    flex-wrap: wrap;
+}

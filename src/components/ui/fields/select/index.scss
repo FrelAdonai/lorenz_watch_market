@@ -1,0 +1,39 @@
+@use "@assets/styles/common/mixins.scss" as *;
+
+//
+$border-color: var(--accent-3);
+$border-focus: var(--accent-1);
+$border-hover: var(--accent);
+$border-radius: var(--rs-small);
+//
+$label-text-color: var(--accent);
+$field-text-color: var(--accent);
+$field-text-focus-color: var(--accent);
+$field-text-hover-color: var(--white);
+$placeholder-color: var(--accent-3);
+// dropdown
+$dropdown-height: 200px;
+$dropdown-bg: var(--white);
+$dropdown-border-color: var(--accent-3);
+$dropdown-scroll-thumb: var(--accent-1);
+$dropdown-scroll-track: var(--rs-small);
+$dropdown-border-radius: var(--rs-small);
+$dropdown-active-bg: var(--accent-1);
+//
+$dropdown-text-color: var(--accent);
+$dropdown-text-hover-color: var(--white);
+$dropdown-text-active-color: var(--white);
+
+.select-cmp-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 6px;
+}
+
+.select-cmp-label {
+    font-weight: var(--fw-m);
+    font-size: var(--fs-16);
+    color: $label-text-color;
+    cursor: pointer;
+}

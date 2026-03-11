@@ -1,0 +1,44 @@
+@use "@assets/styles/common/mixins.scss" as *;
+
+.card-common {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+
+    background: var(--white);
+    border-radius: var(--rs-medium);
+
+    transition: 0.3s all ease;
+
+    @media (hover) {
+        &:hover {
+            box-shadow: 0 6px 16px var(--coomon-shd);
+
+            & img {
+                transform: scale(1.04);
+            }
+        }
+    }
+
+    &__img {
+        @include imgAdaptive(100%, null, 70, cover);
+        border-radius: var(--rs-medium);
+        overflow: hidden;
+
+        & img {
+            will-change: transform;
+            transition: 0.3s all ease;
+        }
+    }
+
+    &__desc {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        gap: 20px;
+    }
+}

@@ -1,0 +1,94 @@
+@use "@assets/styles/common/mixins.scss" as *;
+
+//
+$primary-color: var(--accent);
+$primary-color-text: var(--white);
+$primary-color-hover: var(--accent-1);
+//
+$secondary-color: var(--accent-1);
+$secondary-color-text: var(--white);
+$secondary-color-hover: var(--accent);
+//
+$white-color: var(--white);
+$white-color-text: var(--black);
+$white-color-hover: var(--white);
+//
+$radius: 0;
+$font-weight: var(--fw-m);
+
+// fonts
+$font-size: var(--fs-16);
+
+// start
+.btn {
+    display: flex;
+    align-items: center;
+
+    width: max-content;
+
+    border: 1px solid transparent;
+    border-radius: $radius;
+
+    font-size: $font-size;
+    font-weight: $font-weight;
+
+    transition: 0.3s all ease;
+}
+
+// sizes
+.btn {
+    &.sm {
+        padding: 0.4rem 0.8em;
+    }
+
+    &.md {
+        padding: 0.625rem 1.25em;
+    }
+
+    &.lg {
+        padding: 0.8rem 1.6em;
+    }
+}
+
+// colors
+.btn {
+    &.primary {
+        background: $primary-color;
+        border-color: $primary-color;
+        color: $primary-color-text;
+
+        @media (hover) {
+            &:hover {
+                background: $primary-color-hover;
+                border-color: $primary-color-hover;
+            }
+        }
+    }
+
+    &.secondary {
+        background: $secondary-color;
+        border-color: $secondary-color;
+        color: $secondary-color-text;
+
+        @media (hover) {
+            &:hover {
+                background: $secondary-color-hover;
+                border-color: $secondary-color-hover;
+            }
+        }
+    }
+
+    &.white {
+        background: $white-color;
+        border-color: $white-color;
+        color: $white-color-text;
+
+        @media (hover) {
+            &:hover {
+                background: $secondary-color-hover;
+                border-color: $secondary-color-hover;
+                color: $white-color-hover;
+            }
+        }
+    }
+}

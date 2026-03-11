@@ -1,0 +1,103 @@
+@use "@assets/styles/common/mixins.scss" as *;
+
+// padding
+@for $i from 1 to 21 {
+    $side: $i * 10;
+
+    .pad {
+        @if ($side >= 50) {
+            &-tb-#{$side} {
+                @include adaptiv-value("padding-top", $side, 50, 1);
+                @include adaptiv-value("padding-bottom", $side, 50, 1);
+            }
+
+            &-t-#{$side} {
+                @include adaptiv-value("padding-top", $side, 50, 1);
+            }
+
+            &-b-#{$side} {
+                @include adaptiv-value("padding-bottom", $side, 50, 1);
+            }
+
+            &-lr-#{$side} {
+                @include adaptiv-value("padding-left", $side, 50, 1);
+                @include adaptiv-value("padding-right", $side, 50, 1);
+            }
+
+            &-l-#{$side} {
+                @include adaptiv-value("padding-left", $side, 50, 1);
+            }
+
+            &-r-#{$side} {
+                @include adaptiv-value("padding-right", $side, 50, 1);
+            }
+        } @else if ($side < 50) {
+            &-tb-#{$side} {
+                padding-top: #{$side}px;
+                padding-bottom: #{$side}px;
+            }
+
+            &-t-#{$side} {
+                padding-top: #{$side}px;
+            }
+
+            &-b-#{$side} {
+                padding-bottom: #{$side}px;
+            }
+
+            &-lr-#{$side} {
+                padding-left: #{$side}px;
+                padding-right: #{$side}px;
+            }
+
+            &-l-#{$side} {
+                padding-left: #{$side}px;
+            }
+
+            &-r-#{$side} {
+                padding-right: #{$side}px;
+            }
+        }
+    }
+}
+
+// gap
+@for $i from 1 to 21 {
+    $side: $i * 10;
+
+    .g-gap {
+        &-#{$side} {
+            @if ($side >= 50) {
+                @include adaptiv-value("grid-gap", $side, 50, 1);
+            } @else if ($side < 50) {
+                grid-gap: #{$side}px;
+            }
+        }
+
+        &-row-#{$side} {
+            @if ($side >= 50) {
+                @include adaptiv-value("grid-row-gap", $side, 50, 1);
+            } @else if ($side < 50) {
+                grid-row-gap: #{$side}px;
+            }
+        }
+
+        &-col-#{$side} {
+            @if ($side >= 50) {
+                @include adaptiv-value("grid-column-gap", $side, 50, 1);
+            } @else if ($side < 50) {
+                grid-column-gap: #{$side}px;
+            }
+        }
+    }
+
+    .gap {
+        &-#{$side} {
+            @if ($side >= 50) {
+                @include adaptiv-value("gap", $side, 50, 1);
+            } @else if ($side < 50) {
+                gap: #{$side}px;
+            }
+        }
+    }
+}

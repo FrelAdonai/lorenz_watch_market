@@ -1,0 +1,101 @@
+.header-nav {
+    display: flex;
+    flex-direction: column;
+
+    &.active {
+        & .header-nav__drop {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+    }
+
+    & > ul {
+        display: flex;
+
+        & > li {
+            display: flex;
+            flex-direction: column;
+
+            padding: 22px 20px;
+
+            & > a {
+                text-transform: uppercase;
+                color: var(--white);
+                font-size: var(--fs-14);
+            }
+
+            @media (hover) {
+                &:hover {
+                    & .header-nav__drop {
+                        z-index: 2;
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: auto;
+                    }
+
+                    & .header-nav__drop-inner {
+                        opacity: 1;
+                        visibility: visible;
+                        pointer-events: auto;
+
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+    }
+
+    &__drop {
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+
+        background: var(--white);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: 0.3s all ease;
+    }
+
+    &__drop-inner {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+
+        width: 100%;
+        gap: 20px;
+        padding: 40px 0;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transform: translateY(20px);
+        transition: 0.3s all ease;
+    }
+
+    &__drop-list {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        gap: 10px;
+
+        & ul {
+            & li {
+            }
+
+            & a {
+                color: var(--accent);
+                font-size: var(--fs-14);
+            }
+        }
+    }
+}

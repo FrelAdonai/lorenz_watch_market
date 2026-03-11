@@ -1,0 +1,58 @@
+.benner-full {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 1080px;
+
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    &__desc {
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        gap: 30px;
+        padding: 100px 0;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        & * {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+    }
+}

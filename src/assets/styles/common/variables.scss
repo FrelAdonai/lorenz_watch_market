@@ -1,0 +1,48 @@
+@use "@assets/styles/common/mixins.scss" as *;
+
+:root {
+    //  color
+    --white: #ffffff;
+    --black: #000000;
+    --error: #eb4d4b;
+    --error-rgba: rgba(235, 77, 75, 0.2);
+    --calm: #27ae60;
+
+    --accent: #2b2d3b;
+    --accent-1: #19226b;
+    --accent-2: #eef0ff;
+    --accent-3: #939394;
+    --accent-4: #dcdde1;
+    --accent-5: #f1f3f3;
+
+    // other
+    --coomon-shd: rgba(0, 0, 0, 0.2);
+
+    // radios
+    --rs-small: 4px;
+    --rs-medium: 6px;
+    --rs-large: 12px;
+
+    // form
+    --f-border: var(--accent-4);
+    --f-border-focus: var(--accent-3);
+    --f-border-hover: var(--accent);
+    --f-select-active-color: var(--accent-3);
+    --f-select-hover-color: var(--accent-2);
+    --f-text-color: var(--black);
+    --f-text-active-color: var(--white);
+    --f-placeholder-color: var(--black);
+    --f-border-radius: var(--rs-medium);
+    --f-box-shd: var(--coomon-shd);
+    --f-scroll-color: var(--black);
+    --f-acroll-bar-color: var(--black);
+}
+
+// bg
+.bg {
+    @each $color in accent, accent-1, accent-2, accent-3, accent-4, accent-5 {
+        &-#{$color} {
+            background-color: var(--#{$color});
+        }
+    }
+}
