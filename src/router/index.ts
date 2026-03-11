@@ -30,12 +30,13 @@ const routes: RouteRecordRaw[] = [
     {
         path: ROUTES_PATHS.WATCHES.path,
         name: ROUTES_PATHS.WATCHES.name,
-        component: WatchesPage
+        component: WatchesPage,
     },
     {
         path: ROUTES_PATHS.WATCHES_PRODUCT.path,
         name: ROUTES_PATHS.WATCHES_PRODUCT.name,
-        component: WatchPage
+        component: WatchPage,
+        props: true,
     },
     {
         path: ROUTES_PATHS.PENNS.path,
@@ -45,7 +46,8 @@ const routes: RouteRecordRaw[] = [
     {
         path: ROUTES_PATHS.PENNS_PRODUCT.path,
         name: ROUTES_PATHS.PENNS_PRODUCT.name,
-        component: PennPage
+        component: PennPage,
+        props: true,
     },
 ]
 

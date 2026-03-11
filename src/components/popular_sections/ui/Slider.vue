@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// vue
-import type { RouteLocationRaw } from 'vue-router'
-
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Pagination } from 'swiper/modules'
@@ -10,6 +7,7 @@ import { Navigation, Pagination } from 'swiper/modules'
 // self 
 import { CardWatchCmp } from '@components/cards'
 import { ButtonsSliderLeftCmp, ButtonSliderRightCmp } from '@components/ui'
+import { ROUTES_PATHS } from '@/constants'
 
 interface Props {
     arrMock: Product[]
@@ -23,10 +21,18 @@ interface Product {
     price?: string
     sku?: string
     tag?: string
-    to?: RouteLocationRaw
 }
 
 const props = defineProps<Props>()
+
+function getSlugFromName(name?: string): string {
+    if (!name) return ''
+    return name
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z0-9-]/g, '')
+}
 </script>
 
 <template>
@@ -45,7 +51,7 @@ const props = defineProps<Props>()
                 :key="item.id"
             >
                 <CardWatchCmp
-                    :to="item.to"
+                    :to="item.name ? { name: ROUTES_PATHS.WATCHES_PRODUCT.name, params: { slug: getSlugFromName(item.name) } } : undefined"
                     :img_url="item.img"
                     :alt="item.alt"
                     :name="item.name"

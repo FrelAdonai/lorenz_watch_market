@@ -1,6 +1,7 @@
 <script setup lang="ts">
 
 // vue
+import { useRoute } from 'vue-router'
 import { useScroll } from '@vueuse/core'
 import { ref, computed, watch } from 'vue'
 
@@ -11,7 +12,7 @@ import HeaderNav from './ui/nav/HeaderNav.vue'
 // mok
 import { navItems } from './api'
 
-
+//
 const { y } = useScroll(window, { behavior: 'smooth' })
 const isScrolled = computed(() => (y.value ?? 0) > 200)
 const prevY = ref(0)
@@ -22,13 +23,21 @@ watch(y, (newY) => {
     isScrolledDown.value = currentY > prevY.value
     prevY.value = currentY
 }, { immediate: true })
+
+
+const route = useRoute()
+const isHomePage = computed(() => route.path === ROUTES_PATHS.HOME.path)
 //
 </script>
 
 <template>
     <header
         class="header"
-        :class="{ 'theme-white': isScrolled, 'transform': isScrolledDown }"
+        :class="{
+            'theme-white': isScrolled,
+            'transform': isScrolledDown,
+            'theme-white header-sticky': !isHomePage
+        }"
     >
         <div class="flex:col-max">
 
