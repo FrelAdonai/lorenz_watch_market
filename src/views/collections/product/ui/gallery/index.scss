@@ -1,0 +1,19 @@
+@use "@assets/styles/common/mixins.scss" as *;
+
+.product-gallery {
+    display: flex;
+    flex-wrap: wrap;
+
+    width: 100%;
+    gap: 20px;
+
+    &__item {
+        cursor: pointer;
+        @include imgAdaptive(calc(50% - 10px), null, 100, contain);
+        overflow: hidden;
+
+        &:nth-child(1) {
+            width: 100%;
+        }
+    }
+}

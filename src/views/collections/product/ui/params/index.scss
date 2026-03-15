@@ -1,0 +1,109 @@
+.product-page {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    gap: 10px;
+
+    &__params-item {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        border-bottom: 1px solid var(--accent-4);
+
+        &:first-child {
+            border-top: 1px solid var(--accent-4);
+        }
+    }
+
+    &__params-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        padding: 16px 0;
+        gap: 10px;
+
+        font-weight: var(--fw-b);
+    }
+
+    &__params-btn-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 24px;
+        height: 24px;
+
+        background: var(--accent);
+        border-radius: 50%;
+
+        transition: 0.3s all ease;
+
+        &:deep(svg) {
+            fill: var(--white);
+
+            transition: 0.3s all ease;
+        }
+
+        &.is-open {
+            transform: rotate(90deg);
+        }
+    }
+
+    &__params-content {
+        display: grid;
+        grid-template-rows: 0fr;
+
+        width: 100%;
+
+        will-change: grid-template-rows;
+        transition: 0.3s all ease;
+
+        &.is-open {
+            grid-template-rows: 1fr;
+        }
+
+        & ul {
+            display: flex;
+            flex-direction: column;
+
+            width: 100%;
+            padding: 10px 0;
+            gap: 4px;
+
+            border-top: 1px solid var(--accent-4);
+
+            & li {
+                display: flex;
+                gap: 6px;
+
+                & span {
+                    color: var(--accent);
+                    font-size: var(--fs-14);
+
+                    &:first-child {
+                        text-transform: uppercase;
+                    }
+
+                    &:last-child {
+                        font-weight: var(--fw-b);
+                        color: var(--accent);
+                    }
+                }
+            }
+        }
+    }
+
+    &__params-content-inner {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        overflow: hidden;
+    }
+}

@@ -1,4 +1,5 @@
 export { default as CommonCardCmp } from '@components/cards/common/CommonCardCmp.vue'
-export { default as CardModelCmp } from '@components/cards/model/CardModelCmp.vue'
+export { default as CardCollectionCmp } from '@components/cards/collection/CardCollectionCmp.vue'
 export { default as CardWatchCmp } from '@components/cards/watch/CardWatchCmp.vue'
 export { default as CardBenefitCmp } from '@components/cards/benefit/CardBenefitCmp.vue'
+export { default as CardTypeCmp } from '@components/cards/type/CardTypeCmp.vue'

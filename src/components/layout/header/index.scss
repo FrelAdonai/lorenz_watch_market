@@ -34,6 +34,8 @@
 
     &.header-sticky {
         position: sticky;
+        transform: translate(0);
+        transition: 0s all ease;
     }
 
     @media (hover) {

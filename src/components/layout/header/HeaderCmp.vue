@@ -10,7 +10,7 @@ import { ROUTES_PATHS } from '@/constants'
 import HeaderNav from './ui/nav/HeaderNav.vue'
 
 // mok
-import { navItems } from './api'
+import { navItems } from './api/api'
 
 //
 const { y } = useScroll(window, { behavior: 'smooth' })

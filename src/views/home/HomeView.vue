@@ -1,10 +1,10 @@
 <script setup lang="ts">
 
 // self 
-import FavoriteSection from '@views/home/ui/FavoriteSection.vue'
+import BestCollections from '@views/home/ui/BestCollections.vue'
 import IntroSection from '@views/home/ui/IntroSection.vue'
 import PopularWatchCmp from '@components/popular_sections/PopularWatchCmp.vue'
-import BestModelCmp from '@components/best_model/BestModelCmp.vue'
+import BestCollectionsCmp from '@components/best_model/BestCollectionsCmp.vue'
 import BenefitsCmp from '@components/benefits/BenefitsCmp.vue'
 
 </script>
@@ -15,13 +15,13 @@ import BenefitsCmp from '@components/benefits/BenefitsCmp.vue'
     <IntroSection />
 
     <!-- favorite section -->
-    <FavoriteSection />
+    <BestCollections />
 
-    <!-- popelar section -->
+    <!-- popular section -->
     <PopularWatchCmp />
 
-    <!-- best model section -->
-    <BestModelCmp />
+    <!-- best collections section -->
+    <BestCollectionsCmp />
 
     <!-- benefits section -->
     <BenefitsCmp />
