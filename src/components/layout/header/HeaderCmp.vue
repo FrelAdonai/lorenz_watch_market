@@ -8,9 +8,10 @@ import { ref, computed, watch } from 'vue'
 // self
 import { ROUTES_PATHS } from '@/constants'
 import HeaderNav from './ui/nav/HeaderNav.vue'
+import CartCmp from '@/components/cart/CartCmp.vue'
 
 // mok
-import { navItems } from './api'
+import { navItems } from './api/api'
 
 //
 const { y } = useScroll(window, { behavior: 'smooth' })
@@ -28,6 +29,8 @@ watch(y, (newY) => {
 const route = useRoute()
 const isHomePage = computed(() => route.path === ROUTES_PATHS.HOME.path)
 //
+
+
 </script>
 
 <template>
@@ -57,12 +60,16 @@ const isHomePage = computed(() => route.path === ROUTES_PATHS.HOME.path)
 
                 <div class="header__item">
 
+                    <CartCmp />
+
                 </div>
 
             </div>
 
         </div>
+
     </header>
+
 </template>
 
 <style scoped lang="scss">

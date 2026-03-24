@@ -1,12 +1,17 @@
 <script setup lang="ts">
 // vue
 import { ref } from 'vue'
+import type { RouteLocationRaw } from 'vue-router'
+
 
 // self 
+import IconArrowRightCmp from '@components/ui/icons/arrows/IconArrowRightCmp.vue'
+import { ROUTES_PATHS } from '@/constants'
+
 interface Props {
     items: {
         id?: number
-        to?: string
+        to?: RouteLocationRaw
         label?: string
         sub_nav?: {
             sub_id?: number
@@ -40,8 +45,12 @@ function setHover(index: number | null) {
                 @mouseenter="setHover(index)"
                 @mouseleave="setHover(null)"
             >
-                <router-link to="#">
+                <router-link
+                    :to="item.to ?? ROUTES_PATHS.HOME.path"
+                    :class="[{ 'active': hoveredIndex === index }]"
+                >
                     {{ item.label }}
+                    <IconArrowRightCmp v-if="((item.sub_nav ?? []).length > 0)" />
                 </router-link>
 
                 <div

@@ -3,36 +3,38 @@
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Pagination } from 'swiper/modules'
 
+// routs
+import { ROUTES_PATHS } from '@/constants'
 
 // self 
 import { CardWatchCmp } from '@components/cards'
 import { ButtonsSliderLeftCmp, ButtonSliderRightCmp } from '@components/ui'
-import { ROUTES_PATHS } from '@/constants'
+
+// utils
+import { toSlug } from '@/utils/slug'
+
 
 interface Props {
-    arrMock: Product[]
+    objProducts: Product[]
 }
 
 interface Product {
     id: number
     img?: string
     alt?: string
-    name?: string
+    title?: string
     price?: string
     sku?: string
     tag?: string
+    slugs?: {
+        typeSlug?: string
+        collectionSlug?: string
+        productSlug?: string
+    }
 }
 
 const props = defineProps<Props>()
 
-function getSlugFromName(name?: string): string {
-    if (!name) return ''
-    return name
-        .toLowerCase()
-        .trim()
-        .replace(/\s+/g, '-')
-        .replace(/[^a-z0-9-]/g, '')
-}
 </script>
 
 <template>
@@ -47,14 +49,21 @@ function getSlugFromName(name?: string): string {
             :pagination="{ el: '.popular-watch-slider__pagination', type: 'progressbar' }"
         >
             <SwiperSlide
-                v-for="item in props.arrMock"
+                v-for="item in props.objProducts"
                 :key="item.id"
             >
                 <CardWatchCmp
-                    :to="item.name ? { name: ROUTES_PATHS.WATCHES_PRODUCT.name, params: { slug: getSlugFromName(item.name) } } : undefined"
+                    :to="{
+                        name: ROUTES_PATHS.PRODUCT.name,
+                        params: {
+                            typeSlug: toSlug(item.slugs?.typeSlug),
+                            collectionSlug: toSlug(item.slugs?.collectionSlug),
+                            productSlug: toSlug(item.slugs?.productSlug),
+                        }
+                    }"
                     :img_url="item.img"
                     :alt="item.alt"
-                    :name="item.name"
+                    :name="item.title"
                     :price="item.price"
                     :sku="item.sku"
                     :tag="item.tag"

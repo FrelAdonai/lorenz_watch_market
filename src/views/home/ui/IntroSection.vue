@@ -4,39 +4,15 @@ import { Swiper, SwiperSlide } from 'swiper/vue'
 import { Navigation, Parallax, Pagination, Autoplay } from 'swiper/modules'
 import BannerFullCmp from '@components/banners/full/BannerFullCmp.vue'
 
-const arrMock = [
-    {
-        id: 1,
-        title: 'GRANPREMIO CARBON',
-        description: 'The new generation of the Carbon series, designed for the most demanding fans.',
-        img: '/images/bg/1.png',
-        alt: '',
-        to: '#'
-    },
-    {
-        id: 2,
-        title: 'SHARK CRONOGRAFO',
-        description: 'The new generation of the Shark series, designed for the most demanding fans.',
-        img: '/images/bg/2.jpg',
-        alt: '',
-        to: '#'
-    },
-    {
-        id: 3,
-        title: 'GRANPREMIO CARBON',
-        description: 'The new generation of the Carbon series, designed for the most demanding fans.',
-        img: '/images/bg/3.jpg',
-        alt: '',
-        to: '#'
-    }
-]
+// mok
+import { obj } from '../api/obj_intro'
 </script>
 
 <template>
 
     <section
         class="intro"
-        v-if="((arrMock ?? []).length > 0)"
+        v-if="((obj ?? []).length > 0)"
     >
 
         <Swiper
@@ -51,7 +27,7 @@ const arrMock = [
         >
 
             <SwiperSlide
-                v-for="item in arrMock"
+                v-for="item in obj"
                 :key="item.id"
             >
                 <BannerFullCmp

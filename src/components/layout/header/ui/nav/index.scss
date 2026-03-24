@@ -3,26 +3,42 @@
     flex-direction: column;
 
     &.active {
-        & .header-nav__drop {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
     }
 
     & > ul {
         display: flex;
 
+        width: 100%;
+
         & > li {
             display: flex;
             flex-direction: column;
 
-            padding: 22px 20px;
-
             & > a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                padding: 22px 20px;
+
                 text-transform: uppercase;
                 color: var(--white);
                 font-size: var(--fs-14);
+
+                &:deep(.icon) {
+                    width: 18px;
+                    height: 18px;
+
+                    fill: var(--white);
+
+                    transition: 0.3s all ease;
+                }
+
+                &.active {
+                    &:deep(.icon) {
+                        transform: rotate(90deg);
+                    }
+                }
             }
 
             @media (hover) {

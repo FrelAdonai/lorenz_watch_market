@@ -4,7 +4,7 @@ import type { RouteLocationRaw } from 'vue-router'
 
 // 
 interface Props {
-    size?: "sm" | "md" | "lg"
+    size?: "sm" | "md" | "lg" | "full"
     color?: "primary" | "secondary" | "white"
     type?: "button" | "submit" | "reset"
     disabled?: boolean
@@ -41,7 +41,6 @@ function handleClick(event: MouseEvent) {
     <component
         @click="handleClick"
         :is="tag"
-        class="btn"
         :class="classes"
         :to="to"
         v-bind="componentAttrs"

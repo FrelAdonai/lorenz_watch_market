@@ -7,21 +7,17 @@ export const ROUTES_PATHS = {
         path: '/collections',
         name: 'collections'
     },
-    WATCHES: {
-        path: '/collections/watches',
-        name: 'watches'
+    COLLECTIONS_CATEGORY: {
+        path: '/collections/:typeSlug',
+        name: 'category'
     },
-    WATCHES_PRODUCT: {
-        path: '/collections/watches/:slug',
-        name: 'watch-product'
+    COLLECTION: {
+        path: '/collections/:typeSlug/:collectionSlug',
+        name: 'collection',
     },
-    PENNS: {
-        path: '/collections/penns',
-        name: 'penns'
-    },
-    PENNS_PRODUCT: {
-        path: '/collections/penns/:slug',
-        name: 'panns-product'
+    PRODUCT: {
+        path: '/collections/:typeSlug/:collectionSlug/:productSlug',
+        name: 'product',
     },
     UI: {
         path: '/ui',

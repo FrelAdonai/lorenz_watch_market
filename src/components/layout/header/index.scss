@@ -26,6 +26,16 @@
                 color: var(--accent);
             }
         }
+
+        &:deep(.icon) {
+            fill: var(--accent) !important;
+        }
+
+        &:deep(.cart-btn) {
+            & svg {
+                fill: var(--accent);
+            }
+        }
     }
 
     &.transform {
@@ -34,6 +44,8 @@
 
     &.header-sticky {
         position: sticky;
+        transform: translate(0);
+        transition: 0s all ease;
     }
 
     @media (hover) {
@@ -47,6 +59,16 @@
             &:deep(.header-nav) {
                 & a {
                     color: var(--accent);
+                }
+            }
+
+            &:deep(.icon) {
+                fill: var(--accent) !important;
+            }
+
+            &:deep(.cart-btn) {
+                & svg {
+                    fill: var(--accent);
                 }
             }
         }
@@ -65,5 +87,11 @@
         @include imgAdaptive(120px, null, 50, contain);
 
         transition: 0.3s all ease;
+    }
+
+    &:deep(.cart-btn) {
+        & svg {
+            fill: var(--white);
+        }
     }
 }

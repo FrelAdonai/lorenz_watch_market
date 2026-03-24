@@ -1,0 +1,46 @@
+@use "@assets/styles/common/mixins.scss" as *;
+
+.card-collection {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    @media (hover) {
+        &:hover {
+            & img {
+                transform: scale(1.02);
+            }
+        }
+    }
+
+    &__img {
+        @include imgAdaptive(100%, null, 70, cover);
+        max-height: 600px;
+        overflow: hidden;
+
+        & img {
+            will-change: transform;
+            transition: 0.3s all ease;
+        }
+    }
+
+    &__desc {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        gap: 20px;
+
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
